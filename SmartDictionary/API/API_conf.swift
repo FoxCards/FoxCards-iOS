@@ -33,7 +33,9 @@ class API_conf {
     static func getPostRequest(url: String,body: Any) -> URLRequest {
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
-        request.httpBody = body as! Data
+        let data = try! JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.prettyPrinted)
+        request.setValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type" )
+        request.httpBody = data as! Data
         return request
     }
     
@@ -55,7 +57,7 @@ class API_conf {
             failure("Не удалось полуить данные с сервера")
             return
         }
-        
+        print()
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             success(json)

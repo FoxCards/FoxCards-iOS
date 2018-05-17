@@ -20,7 +20,7 @@ class TranslatePresenter: TranslatePresenterInput {
     }
     
     func save(word: String, transcription: String, translate: String, isKnown: Bool) {
-        WordsFabrique.setWord(word: word, transcription: transcription, translate: translate, isKnow: isKnown, context: CoreDataManager.sharedInstance.getMainContext())
+        WordsFabrique.setWord(word: word, transcription: transcription, translate: translate, isKnow: isKnown, language: nil, context: CoreDataManager.sharedInstance.getMainContext())
         CoreDataManager.sharedInstance.saveContext()
     }
     

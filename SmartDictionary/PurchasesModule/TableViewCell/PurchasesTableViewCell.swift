@@ -21,10 +21,10 @@ class PurchasesTableViewCell: UITableViewCell {
         registerNib()
     }
     
-//    func configure(dataSource: [CardSetModel], vc: PurchasesViewController) {
-//        self.dataSource = dataSource
-//        self.vc = vc
-//    }
+    func configure(dataSource: [CardSetModel], vc: PurchasesViewController) {
+        self.dataSource = dataSource
+        self.vc = vc
+    }
     
     func configure(vc: PurchasesViewController) {
         self.vc = vc
@@ -33,7 +33,7 @@ class PurchasesTableViewCell: UITableViewCell {
 
 extension PurchasesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10 //dataSource?.count ?? 0
+        return dataSource?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,13 +56,14 @@ extension PurchasesTableViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        vc?.id = self.dataSource?[indexPath.row].id
         vc?.performSegue(withIdentifier: "cardsToCard", sender: nil)
     }
 }
 
 extension PurchasesTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 150)
+        return CGSize(width: 150, height: 200)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

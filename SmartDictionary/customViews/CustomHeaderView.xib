@@ -34,7 +34,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOB-SQ-msb">
-                    <rect key="frame" x="144.5" y="70" width="220" height="38"/>
+                    <rect key="frame" x="144.5" y="90" width="220" height="38"/>
                     <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="220" id="kE9-Gn-o3C"/>
@@ -48,7 +48,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xi-pf-fdO">
-                    <rect key="frame" x="183" y="123" width="144" height="30"/>
+                    <rect key="frame" x="183" y="143" width="144" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title=" Предложить слово ">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,7 +62,7 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ggG-vf-KaM" secondAttribute="bottom" id="8OF-nZ-yxA"/>
                 <constraint firstItem="AOB-SQ-msb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Dq5-H0-ZvF"/>
-                <constraint firstItem="AOB-SQ-msb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="N4U-wG-UTK"/>
+                <constraint firstItem="AOB-SQ-msb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="70" id="N4U-wG-UTK"/>
                 <constraint firstItem="ggG-vf-KaM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Neu-g3-XD4"/>
                 <constraint firstItem="TxZ-Gs-enY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="ZUG-ZW-8T6"/>
                 <constraint firstItem="9xi-pf-fdO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dG5-5C-Bvu"/>

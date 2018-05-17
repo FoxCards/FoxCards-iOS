@@ -15,7 +15,7 @@ extension UIViewController {
         let backgroundImageView = UIImageView.init(frame: self.view.frame)
         backgroundImageView.image = backgroundImage
         backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.alpha = 0.6
+        backgroundImageView.alpha = 0.7
         
         if self.view.subviews.first as? UIImageView == nil {
             self.view.insertSubview(backgroundImageView, at: 0)
@@ -23,6 +23,5 @@ extension UIViewController {
             self.view.subviews.first?.removeFromSuperview()
             self.view.insertSubview(backgroundImageView, at: 0)
         }
-        
     }
 }

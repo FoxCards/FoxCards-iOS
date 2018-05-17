@@ -11,17 +11,19 @@ import Speech
 import AVFoundation
 
 class CardView: SwipableViews {
-    
+    weak var vc: CardsViewController?
     let CardFronTag = 1
     let CardBackTag = 2
     var cardView: (frontLabel: UILabel, backLabel: UILabel)?
     var frontLabel: UILabel!
     var backLabel: UILabel!
     //MARK: - speach
-    let audioEngine = AVAudioEngine()
+    var audioEngine = AVAudioEngine()
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: const.app_settings.app_language?.speach_locale ?? ""))
     let request = SFSpeechAudioBufferRecognitionRequest()
     var recognitionTask: SFSpeechRecognitionTask?
+    
+    var voiceFlag = false
     
     @IBOutlet weak var langImg: UIImageView!
     @IBOutlet weak var voiceButton: UIButton!
@@ -37,20 +39,23 @@ class CardView: SwipableViews {
         checkAllowedMicrophone()
     }
     
+    
     @IBAction func pushToStartRecognition(_ sender: UIButton) {
         if sender.isSelected {
-            audioEngine.stop()
-            request.endAudio()
-            recognitionTask?.cancel()
+            stopVoice()
+            voiceFlag = false
+            vc?.voiceUpCard.removeLast()
         } else {
+            voiceFlag = true
             startRecognition()
+            vc?.voiceUpCard.append(self)
         }
-        
         sender.isSelected = !sender.isSelected
     }
 
     
-    func configure(obj: Word, frame: CGRect) {
+    func configure(obj: Word,vc: CardsViewController ,frame: CGRect) {
+        self.vc = vc
         langImg.image = UIImage(named: const.app_settings.app_language?.speach_locale ?? "")
         if frontLabel == nil || backLabel == nil {
             frontLabel = self.createdCardWithLabel(labelTitle: "", frame: frame, tag: CardFronTag)
@@ -70,6 +75,7 @@ class CardView: SwipableViews {
         }
         voiceButton.isSelected = false
         recognitionTask?.cancel()
+
         voiceLabel.text = ""
     }
     
@@ -94,7 +100,7 @@ class CardView: SwipableViews {
             voiceLabel.text = ""
         }
         let transitionOptions = UIViewAnimationOptions.transitionFlipFromLeft
-        UIView.transition(with: self, duration: 0.6, options: transitionOptions, animations: {
+        UIView.transition(with: self, duration: 0.5, options: transitionOptions, animations: {
             self.cardView?.frontLabel.removeFromSuperview()
             self.addSubview((self.cardView?.backLabel)!)
         }) { (finished) in
@@ -107,7 +113,6 @@ extension CardView {
     fileprivate func checkAllowedMicrophone() {
         SFSpeechRecognizer.requestAuthorization { [unowned self] (status) in
             switch status {
-                
             case .authorized:
                 DispatchQueue.main.async { [unowned self] in
                     self.voiceButton.isEnabled = true
@@ -118,7 +123,6 @@ extension CardView {
                 print("nowDetermined")
             case .restricted:
                 print("restricted")
-                
             }
         }
     }
@@ -130,7 +134,7 @@ extension CardView {
         node.installTap(onBus: 0, bufferSize: 1024, format: recognationFormat) { [unowned self] (buffer, audioTime) in
             self.request.append(buffer)
         }
-        
+
         audioEngine.prepare()
         do {
             try audioEngine.start()
@@ -153,5 +157,20 @@ extension CardView {
                 node.removeTap(onBus: 0)
             }
         })
+    }
+}
+
+extension CardView {
+    //stop voice
+    func stopVoice() {
+        audioEngine.stop()
+        request.endAudio()
+        recognitionTask?.cancel()
+    }
+    
+    func safeVoice() {
+        if voiceFlag {
+            stopVoice()
+        }
     }
 }

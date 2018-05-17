@@ -133,12 +133,19 @@ class SwipableViews: UIView {
         {
             let view = visibleViews[i] as! UIView
             addPanGestureRecognizer ( view: view )
+            addTapGestureRecognizer(view: view)
         }
     }
     
     private func addPanGestureRecognizer ( view : UIView )
     {
         let recognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(rec:)))
+        view.addGestureRecognizer(recognizer)
+    }
+    
+    private func addTapGestureRecognizer(view: UIView) {
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(rec:)))
+        recognizer.numberOfTapsRequired = 2
         view.addGestureRecognizer(recognizer)
     }
 }
@@ -180,7 +187,7 @@ extension SwipableViews
         
         view.transform = CGAffineTransform(rotationAngle: centerDiff / rotator)
         if rec.state == .ended {
-            if fabs(centerDiff) >= view.frame.size.width / 2 && centerDiff > 0 {
+            if fabs(centerDiff) >= view.frame.size.width / 3 && centerDiff > 0 {
                 //доводчик в лево
                 UIView.animate(withDuration: 0.1, animations: {
                     view.center = CGPoint(x: view.center.x + 500, y: view.center.y)
@@ -188,7 +195,7 @@ extension SwipableViews
                     self?.handleAction(direction: .right, view: view)
                     chooseLabel?.alpha = 0
                 })
-            } else if fabs(centerDiff) >= view.frame.size.width / 2 && centerDiff < 0 {
+            } else if fabs(centerDiff) >= view.frame.size.width / 3 && centerDiff < 0 {
                 UIView.animate(withDuration: 0.1, animations: {
                     view.center = CGPoint(x: view.center.x - 500, y: view.center.y)
                 }, completion: { [weak self] (finished) in
@@ -296,5 +303,14 @@ class AutomaticSwipeOperation: Operation {
         
         _ = semaphore.wait(timeout: .distantFuture)
         
+    }
+}
+
+extension SwipableViews {
+    @objc func handleTap(rec: UITapGestureRecognizer) {
+        let view = rec.view as? CardView
+        if view != nil {
+            view?.flipCard()
+        }
     }
 }

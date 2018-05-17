@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import UIKit
+
+
+
+enum Storyboards: String {
+    case main = "Main"
+}
+    
+extension UIStoryboard {
+    static func create(_ storyboard: Storyboards) -> UIStoryboard {
+        return UIStoryboard.init(name: storyboard.rawValue, bundle: nil)
+    }
+}
+        
+        
+

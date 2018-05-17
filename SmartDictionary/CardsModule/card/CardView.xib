@@ -28,11 +28,11 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68O-R5-7zw">
-                    <rect key="frame" x="164.5" y="572" width="45" height="45"/>
+                    <rect key="frame" x="169.5" y="582" width="35" height="35"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="45" id="6nX-of-1mY"/>
-                        <constraint firstAttribute="width" constant="45" id="8vw-iE-2uY"/>
+                        <constraint firstAttribute="height" constant="35" id="6nX-of-1mY"/>
+                        <constraint firstAttribute="width" constant="35" id="8vw-iE-2uY"/>
                     </constraints>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" backgroundImage="microphon.png"/>
@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04D-k4-y82">
-                    <rect key="frame" x="20" y="552" width="335" height="0.0"/>
+                    <rect key="frame" x="20" y="562" width="335" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="110" id="ErC-oA-qzI"/>
                     </constraints>
@@ -83,8 +83,8 @@
         </view>
     </objects>
     <resources>
-        <image name="flip.png" width="48" height="48"/>
-        <image name="microphon.png" width="48" height="48"/>
-        <image name="stop.png" width="48" height="48"/>
+        <image name="flip.png" width="32" height="32"/>
+        <image name="microphon.png" width="32" height="32"/>
+        <image name="stop.png" width="32" height="32"/>
     </resources>
 </document>

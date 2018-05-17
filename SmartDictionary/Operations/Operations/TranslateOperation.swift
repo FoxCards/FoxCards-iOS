@@ -8,13 +8,14 @@
 
 import Foundation
 import SwiftyJSON
-
+import RNCryptor
 
 class TranslateOperation: Operation {
     var text = ""
     var locale = ""
     var success: (_ translate: String)-> Void
     var failure: (_ error: String)-> Void
+    
     
     
     required init(text: String, locale: String, success: @escaping (_ translate: String)-> Void, failure: @escaping (_ error: String)-> Void) {
@@ -24,23 +25,20 @@ class TranslateOperation: Operation {
         self.locale = locale
     }
     
-    
-    
-    
     override func main() {
+        
         let semaphore = DispatchSemaphore(value: 0)
-        _ = API_wrapper.getTranslate(text: text, locale: locale, success: { (response) in
+        let data: Data = self.text.data(using: .utf8)!
+        let ciphertext = RNCryptor.encrypt(data: data, withPassword: const.API_statements.salt)
+        print(ciphertext.base64EncodedString(options: .init(rawValue: 0)))
+        _ = API_wrapper.getTranslate(text: ciphertext.base64EncodedString(options: .init(rawValue: 0)), locale: locale, success: { (response) in
             let json = JSON(response)
-            let dict = json.dictionaryValue
-            if dict["text"]?[] == nil {
-                semaphore.signal()
-                return
-            } else {
-                let array = dict["text"]![]
-                let translate = array[0].stringValue
-                self.success(translate)
-                semaphore.signal()
-            }
+//            print(json)
+//            let id = json["id"].stringValue
+//            let lang = json["langs"].stringValue
+            let translate = json["translation"].stringValue
+            self.success(translate)
+            semaphore.signal()
            
         }) { (error) in
             print(error)

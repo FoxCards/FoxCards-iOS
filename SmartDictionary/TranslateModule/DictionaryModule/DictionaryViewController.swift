@@ -14,7 +14,6 @@ class DictionaryViewController: UIViewController, DictionaryViewInput {
     @IBOutlet weak var segmetController: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     let presenter = DictionaryPresenter()
-    
 
     @IBAction func changeValueOfSegment(_ sender: Any) {
         let bool = segmetController.selectedSegmentIndex == 0 ? false : true
@@ -26,10 +25,10 @@ class DictionaryViewController: UIViewController, DictionaryViewInput {
         super.viewDidLoad()
         let nib = UINib(nibName: "WordCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "wordCell")
-        setNavBatItem()
-        
+        self.tableView.tableFooterView = UIView()
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.black]
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -72,6 +71,7 @@ extension DictionaryViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath) as! WordCell
         let word = presenter.entityAt(index: indexPath, segmentState: segmetController.selectedSegmentIndex) as! Word
         cell.configure(model: word)
+        
         return cell
     }
     
@@ -127,8 +127,8 @@ extension DictionaryViewController: DictionaryFrcViewChange {
     
     func update(indexPath: IndexPath?, object: Word) {
         if let indexPath = indexPath {
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.textLabel?.text = object.word
+            let cell = tableView.cellForRow(at: indexPath) as? WordCell
+            cell?.configure(model: object)
         }
     }
     
@@ -154,19 +154,9 @@ extension DictionaryViewController: DictionaryFrcViewChange {
 }
 
 extension DictionaryViewController {
-    func setNavBatItem() {
-        let imageView = UIImageView()
-        imageView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "plus.png")
-        let barButtonItem = UIBarButtonItem(customView: imageView)
-        navigationItem.rightBarButtonItem = barButtonItem
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addWord))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGestureRecognizer)
-        
+    
+    @IBAction func addNewWord(_ sender: Any) {
+        addWord()
     }
     
     @objc func addWord() {

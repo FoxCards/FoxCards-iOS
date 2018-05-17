@@ -43,12 +43,12 @@ extension CardPresenter {
     }
     
     func updateWordToKnown(obj: Word) {
-        WordsFabrique.setWord(word: obj.word!, transcription: obj.transcriptions!, translate: obj.translate!, isKnow: true, context: CoreDataManager.sharedInstance.getMainContext())
+        WordsFabrique.setWord(word: obj.word!, transcription: obj.transcriptions!, translate: obj.translate!, isKnow: true, language: nil, context: CoreDataManager.sharedInstance.getMainContext())
         CoreDataManager.sharedInstance.saveContext()
     }
     
     func updateWordToUnknown(obj: Word) {
-        WordsFabrique.setWord(word: obj.word!, transcription: obj.transcriptions!, translate: obj.translate!, isKnow: false, context: CoreDataManager.sharedInstance.getMainContext())
+        WordsFabrique.setWord(word: obj.word!, transcription: obj.transcriptions!, translate: obj.translate!, isKnow: false, language: nil, context: CoreDataManager.sharedInstance.getMainContext())
         CoreDataManager.sharedInstance.saveContext()
     }
     

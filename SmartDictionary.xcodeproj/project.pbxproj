@@ -51,6 +51,22 @@
 		9A7A06E5205A5EB300F00911 /* baritem5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A06E4205A5EB200F00911 /* baritem5.png */; };
 		9A7A06E8205A602300F00911 /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A06E7205A602300F00911 /* PurchasesViewController.swift */; };
 		9A7A06EA205A605700F00911 /* PurchasesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A06E9205A605700F00911 /* PurchasesPresenter.swift */; };
+		9A84C6D1209DD2BA008CB372 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6D0209DD2BA008CB372 /* Debouncer.swift */; };
+		9A84C6D520A7033A008CB372 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6D420A7033A008CB372 /* logo.png */; };
+		9A84C6D820A70EC4008CB372 /* SetUpWizardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6D720A70EC4008CB372 /* SetUpWizardVC.swift */; };
+		9A84C6E020A71673008CB372 /* JTSP2414.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6DF20A71673008CB372 /* JTSP2414.MP4 */; };
+		9A84C6E220A71D5E008CB372 /* JTSP24141.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6E120A71D5D008CB372 /* JTSP24141.MP4 */; };
+		9A84C6E520A73EEF008CB372 /* SaveWordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6E420A73EEF008CB372 /* SaveWordService.swift */; };
+		9A84C6E720A73F92008CB372 /* fox_opacity.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6E620A73F92008CB372 /* fox_opacity.png */; };
+		9A84C6EA20A770C2008CB372 /* FirstWizardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6E820A770C2008CB372 /* FirstWizardCell.swift */; };
+		9A84C6EB20A770C2008CB372 /* FirstWizardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6E920A770C2008CB372 /* FirstWizardCell.xib */; };
+		9A84C6F520A779F1008CB372 /* JTSP24142.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6F420A779F0008CB372 /* JTSP24142.MP4 */; };
+		9A84C6F820A77D57008CB372 /* SelectLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6F620A77D57008CB372 /* SelectLanguageCell.swift */; };
+		9A84C6F920A77D57008CB372 /* SelectLanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6F720A77D57008CB372 /* SelectLanguageCell.xib */; };
+		9A84C6FC20A77E3D008CB372 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6FA20A77E3D008CB372 /* LanguageCell.swift */; };
+		9A84C6FD20A77E3D008CB372 /* LanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6FB20A77E3D008CB372 /* LanguageCell.xib */; };
+		9A84C70020A782FA008CB372 /* FinalWizardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6FE20A782FA008CB372 /* FinalWizardCell.swift */; };
+		9A84C70120A782FA008CB372 /* FinalWizardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6FF20A782FA008CB372 /* FinalWizardCell.xib */; };
 		9A859BF5203D70550057700E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A859BF4203D70550057700E /* AppDelegate.swift */; };
 		9A859BFA203D70550057700E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A859BF8203D70550057700E /* Main.storyboard */; };
 		9A859BFF203D70550057700E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A859BFD203D70550057700E /* LaunchScreen.storyboard */; };
@@ -140,6 +156,22 @@
 		9A7A06E4205A5EB200F00911 /* baritem5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baritem5.png; sourceTree = "<group>"; };
 		9A7A06E7205A602300F00911 /* PurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesViewController.swift; sourceTree = "<group>"; };
 		9A7A06E9205A605700F00911 /* PurchasesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesPresenter.swift; sourceTree = "<group>"; };
+		9A84C6D0209DD2BA008CB372 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		9A84C6D420A7033A008CB372 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		9A84C6D720A70EC4008CB372 /* SetUpWizardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpWizardVC.swift; sourceTree = "<group>"; };
+		9A84C6DF20A71673008CB372 /* JTSP2414.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = JTSP2414.MP4; sourceTree = "<group>"; };
+		9A84C6E120A71D5D008CB372 /* JTSP24141.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = JTSP24141.MP4; sourceTree = "<group>"; };
+		9A84C6E420A73EEF008CB372 /* SaveWordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveWordService.swift; sourceTree = "<group>"; };
+		9A84C6E620A73F92008CB372 /* fox_opacity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fox_opacity.png; sourceTree = "<group>"; };
+		9A84C6E820A770C2008CB372 /* FirstWizardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWizardCell.swift; sourceTree = "<group>"; };
+		9A84C6E920A770C2008CB372 /* FirstWizardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstWizardCell.xib; sourceTree = "<group>"; };
+		9A84C6F420A779F0008CB372 /* JTSP24142.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = JTSP24142.MP4; sourceTree = "<group>"; };
+		9A84C6F620A77D57008CB372 /* SelectLanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLanguageCell.swift; sourceTree = "<group>"; };
+		9A84C6F720A77D57008CB372 /* SelectLanguageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectLanguageCell.xib; sourceTree = "<group>"; };
+		9A84C6FA20A77E3D008CB372 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
+		9A84C6FB20A77E3D008CB372 /* LanguageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageCell.xib; sourceTree = "<group>"; };
+		9A84C6FE20A782FA008CB372 /* FinalWizardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalWizardCell.swift; sourceTree = "<group>"; };
+		9A84C6FF20A782FA008CB372 /* FinalWizardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinalWizardCell.xib; sourceTree = "<group>"; };
 		9A859BF1203D70550057700E /* SmartDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A859BF4203D70550057700E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A859BF9203D70550057700E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -306,6 +338,46 @@
 			path = PurchasesModule;
 			sourceTree = "<group>";
 		};
+		9A84C6CF209DD2A5008CB372 /* Debouncer */ = {
+			isa = PBXGroup;
+			children = (
+				9A84C6D0209DD2BA008CB372 /* Debouncer.swift */,
+			);
+			path = Debouncer;
+			sourceTree = "<group>";
+		};
+		9A84C6D620A70E65008CB372 /* setUpWizard */ = {
+			isa = PBXGroup;
+			children = (
+				9A84C6D720A70EC4008CB372 /* SetUpWizardVC.swift */,
+				9A84C6D920A70F15008CB372 /* cells */,
+			);
+			path = setUpWizard;
+			sourceTree = "<group>";
+		};
+		9A84C6D920A70F15008CB372 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				9A84C6E820A770C2008CB372 /* FirstWizardCell.swift */,
+				9A84C6E920A770C2008CB372 /* FirstWizardCell.xib */,
+				9A84C6F620A77D57008CB372 /* SelectLanguageCell.swift */,
+				9A84C6F720A77D57008CB372 /* SelectLanguageCell.xib */,
+				9A84C6FA20A77E3D008CB372 /* LanguageCell.swift */,
+				9A84C6FB20A77E3D008CB372 /* LanguageCell.xib */,
+				9A84C6FE20A782FA008CB372 /* FinalWizardCell.swift */,
+				9A84C6FF20A782FA008CB372 /* FinalWizardCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		9A84C6E320A73ECD008CB372 /* SaveWordsService */ = {
+			isa = PBXGroup;
+			children = (
+				9A84C6E420A73EEF008CB372 /* SaveWordService.swift */,
+			);
+			path = SaveWordsService;
+			sourceTree = "<group>";
+		};
 		9A859BE8203D70550057700E = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +399,9 @@
 		9A859BF3203D70550057700E /* SmartDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				9A84C6F420A779F0008CB372 /* JTSP24142.MP4 */,
+				9A84C6E120A71D5D008CB372 /* JTSP24141.MP4 */,
+				9A84C6DF20A71673008CB372 /* JTSP2414.MP4 */,
 				9A859BF8203D70550057700E /* Main.storyboard */,
 				9AE47B072056794F0056D10C /* models */,
 				9ACFD46B203D81FC007BC158 /* constant */,
@@ -341,6 +416,7 @@
 				9A859C0B203D741F0057700E /* TranslateModule */,
 				9A859C0A203D74140057700E /* SettingsModule */,
 				9A7A06E6205A5FD400F00911 /* PurchasesModule */,
+				9A84C6D620A70E65008CB372 /* setUpWizard */,
 				9A3DF5632073853B00C7DC2D /* extensions */,
 				9A859C06203D705C0057700E /* other */,
 			);
@@ -412,6 +488,8 @@
 		9A859C0C203D74620057700E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9A84C6E320A73ECD008CB372 /* SaveWordsService */,
+				9A84C6CF209DD2A5008CB372 /* Debouncer */,
 				9A91DDC1205AC9C4003F5AD1 /* PurchasesService */,
 				9A3825FF2045617F00914AD3 /* TestManager */,
 				9A859C0F203D74E70057700E /* SwipableViews */,
@@ -514,6 +592,8 @@
 		9AC178B3204A877B0001FB34 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9A84C6E620A73F92008CB372 /* fox_opacity.png */,
+				9A84C6D420A7033A008CB372 /* logo.png */,
 				9A5A216E2079026200BADFF8 /* backgrounds */,
 				9A3DF5662073B46C00C7DC2D /* flags */,
 				9A3DF56120737DD300C7DC2D /* no.png */,
@@ -591,7 +671,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Андрей Коноплев";
 				TargetAttributes = {
 					9A859BF0203D70550057700E = {
@@ -626,6 +706,7 @@
 				9A5A21752079032400BADFF8 /* english.jpg in Resources */,
 				9A859BFF203D70550057700E /* LaunchScreen.storyboard in Resources */,
 				9A5A21772079032400BADFF8 /* spain.jpg in Resources */,
+				9A84C6E020A71673008CB372 /* JTSP2414.MP4 in Resources */,
 				9AC178BB204A8D1F0001FB34 /* stop.png in Resources */,
 				9A0D894620823F2E00F83106 /* CustomHeaderView.xib in Resources */,
 				9AC178B5204A88220001FB34 /* flip.png in Resources */,
@@ -635,23 +716,31 @@
 				9A91DDC0205AC7DE003F5AD1 /* PurchasesTableViewCell.xib in Resources */,
 				9AE47B0B2057C7B00056D10C /* pointer.png in Resources */,
 				9A859C1A203D79E20057700E /* CardView.xib in Resources */,
+				9A84C6FD20A77E3D008CB372 /* LanguageCell.xib in Resources */,
 				9A3DF56020737B5F00C7DC2D /* yes.png in Resources */,
 				9A7A06E320597E5A00F00911 /* baritem4.png in Resources */,
 				9A7A06DD20597B4300F00911 /* baritem2.png in Resources */,
 				9A3DF56220737DD300C7DC2D /* no.png in Resources */,
 				9A7A06E5205A5EB300F00911 /* baritem5.png in Resources */,
 				9A7A06D72059742000F00911 /* london.jpg in Resources */,
+				9A84C6EB20A770C2008CB372 /* FirstWizardCell.xib in Resources */,
 				9A5A21762079032400BADFF8 /* france.jpg in Resources */,
 				9A5A21742079032400BADFF8 /* germany.jpg in Resources */,
 				9A859BFA203D70550057700E /* Main.storyboard in Resources */,
 				9A3DF558206811B600C7DC2D /* Assets.xcassets in Resources */,
+				9A84C6D520A7033A008CB372 /* logo.png in Resources */,
 				9A3DF56E2073B6DA00C7DC2D /* fr-FR.png in Resources */,
 				9A7A06D9205979F600F00911 /* baritem1.png in Resources */,
+				9A84C6E720A73F92008CB372 /* fox_opacity.png in Resources */,
 				9AA1B801205A88A7001455E4 /* WordCell.xib in Resources */,
 				9A92E9752079FD4500BDF98D /* CardSetsCell.xib in Resources */,
 				9A3DF56F2073B6DA00C7DC2D /* de-DE.png in Resources */,
 				9AC178B7204A882B0001FB34 /* download.png in Resources */,
+				9A84C70120A782FA008CB372 /* FinalWizardCell.xib in Resources */,
+				9A84C6E220A71D5E008CB372 /* JTSP24141.MP4 in Resources */,
+				9A84C6F520A779F1008CB372 /* JTSP24142.MP4 in Resources */,
 				9AC178B9204A890F0001FB34 /* microphon.png in Resources */,
+				9A84C6F920A77D57008CB372 /* SelectLanguageCell.xib in Resources */,
 				9A3DF55A206819BF00C7DC2D /* plus.png in Resources */,
 				9A0D894F20825BF500F83106 /* CardSetWordCell.xib in Resources */,
 				9A3DF5692073B4C900C7DC2D /* en_US.png in Resources */,
@@ -670,12 +759,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SmartDictionary/Pods-SmartDictionary-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -716,6 +807,7 @@
 				9A0D89562082965D00F83106 /* CardSetOperation.swift in Sources */,
 				9AD398B920493A4B00977C7C /* TranslateInterfaces.swift in Sources */,
 				9A859C15203D759E0057700E /* CardsPresenter.swift in Sources */,
+				9A84C6EA20A770C2008CB372 /* FirstWizardCell.swift in Sources */,
 				9AA1B800205A88A7001455E4 /* WordCell.swift in Sources */,
 				9ACFD473203EC597007BC158 /* API_wrapper.swift in Sources */,
 				9ACFD46D203D8214007BC158 /* constant.swift in Sources */,
@@ -723,10 +815,12 @@
 				9A0D895820850B2600F83106 /* CardSetPresenter.swift in Sources */,
 				9A0D894420823F0A00F83106 /* CustomHeaderView.swift in Sources */,
 				9AD398BB20493B7100977C7C /* TranslateViewController.swift in Sources */,
+				9A84C6D1209DD2BA008CB372 /* Debouncer.swift in Sources */,
 				9A3825F62044600500914AD3 /* TranslateOperation.swift in Sources */,
 				9A0D895120827DB800F83106 /* CardSetModel.swift in Sources */,
 				9A859BF5203D70550057700E /* AppDelegate.swift in Sources */,
 				9A4257F52043FD4800668FB9 /* DictionaryInterfaces.swift in Sources */,
+				9A84C6F820A77D57008CB372 /* SelectLanguageCell.swift in Sources */,
 				9A3825FA204461AC00914AD3 /* DataProvider.swift in Sources */,
 				9A91DDC5205ACA2A003F5AD1 /* CardCollectionModel.swift in Sources */,
 				9A3826012045618E00914AD3 /* TestManager.swift in Sources */,
@@ -739,10 +833,12 @@
 				9A0D894E20825BF500F83106 /* CardSetWordCell.swift in Sources */,
 				9A91DDC7205ACBAF003F5AD1 /* WordModel.swift in Sources */,
 				9A7A06EA205A605700F00911 /* PurchasesPresenter.swift in Sources */,
+				9A84C6FC20A77E3D008CB372 /* LanguageCell.swift in Sources */,
 				9ACFD468203D7FCA007BC158 /* Dictionary.xcdatamodeld in Sources */,
 				9A859C17203D75C40057700E /* CardsInterfaces.swift in Sources */,
 				9A859C1C203D79F50057700E /* CardView.swift in Sources */,
 				9AD398B720493A3600977C7C /* TranslatePresenter.swift in Sources */,
+				9A84C70020A782FA008CB372 /* FinalWizardCell.swift in Sources */,
 				9ACFD46A203D7FEB007BC158 /* CoreDataManager.swift in Sources */,
 				9A3DF5652073858D00C7DC2D /* +extensionViewController.swift in Sources */,
 				9A859C13203D754B0057700E /* CardsViewController.swift in Sources */,
@@ -757,7 +853,9 @@
 				9A92E9742079FD4500BDF98D /* CardSetsCell.swift in Sources */,
 				9A3825F82044619700914AD3 /* OperationsManager.swift in Sources */,
 				9AC178B220496A7A0001FB34 /* CustomViews.swift in Sources */,
+				9A84C6D820A70EC4008CB372 /* SetUpWizardVC.swift in Sources */,
 				9A0D8954208282B400F83106 /* CollectionsCardSetsOperation.swift in Sources */,
+				9A84C6E520A73EEF008CB372 /* SaveWordService.swift in Sources */,
 				9A92E85520567286005F0466 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -798,6 +896,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -805,6 +904,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -832,7 +932,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -855,6 +955,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -862,6 +963,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -883,7 +985,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

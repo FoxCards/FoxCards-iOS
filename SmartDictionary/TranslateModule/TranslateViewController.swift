@@ -15,6 +15,7 @@ class TranslateViewController: UIViewController, TranslateViewInput {
     @IBOutlet weak var fromLangLabel: UILabel!
     @IBOutlet weak var toLangLabel: UILabel!
     
+    let debauncer = Debouncer(interval: 0.8)
     var presenter = TranslatePresenter()
     
     @IBOutlet weak var saveWord: UIButton!
@@ -51,7 +52,6 @@ class TranslateViewController: UIViewController, TranslateViewInput {
         presenter.view = self
         translateTextField.delegate = self
         saveWord.isEnabled = false
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +59,7 @@ class TranslateViewController: UIViewController, TranslateViewInput {
         fromLangLabel.text = const.app_settings.app_language?.name ?? ""
         toLangLabel.text = "Русский"
         clearAllText()
+        saveWord.isEnabled = false
     }
     
     func reloadData() {
@@ -77,30 +78,32 @@ extension TranslateViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let data = textField.text!
-        var newData = String()
         
-        if string != "" {
-            newData = data + string
-        } else {
-            newData = String(data.dropLast())
-        }
-        
-        saveWord.isEnabled = newData != ""
-        
-        if newData != "" {
-            let locale = fromLangLabel.text == "Русский" ? const.app_settings.app_language?.reverseApiLocale() ?? "" : const.app_settings.app_language?.api_locale ?? ""
-            DataProvider.getTranslate(text: newData, locale: locale, success: { (text) in
-                DispatchQueue.main.async {
-                    self.translateLabel.text = text
-                }
-            }) { (error) in
-                print(error)
+            let data = textField.text!
+            var newData = String()
+            
+            if string != "" {
+                newData = data + string
+            } else {
+                newData = String(data.dropLast())
             }
-        } else {
-            self.translateLabel.text = ""
-        }
-
+        
+            self.saveWord.isEnabled = newData != ""
+            if newData != "" {
+                debauncer.callback = {
+                    let locale = self.fromLangLabel.text == "Русский" ? const.app_settings.app_language?.reverseApiLocale() ?? "" : const.app_settings.app_language?.api_locale ?? ""
+                    DataProvider.getTranslate(text: newData, locale: locale, success: { (text) in
+                        DispatchQueue.main.async {
+                            self.translateLabel.text = text
+                        }
+                    }) { (error) in
+                        print(error)
+                    }
+                }
+            } else {
+                self.translateLabel.text = ""
+            }
+        debauncer.call()
         return true
     }
 }

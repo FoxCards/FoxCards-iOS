@@ -1,24 +1,28 @@
 PODS:
-  - Kingfisher (4.6.2)
+  - Kingfisher (4.7.0)
+  - RNCryptor (5.0.3)
   - SVProgressHUD (2.2.5)
-  - SwiftyJSON (4.0.0)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Kingfisher
+  - RNCryptor (~> 5.0)
   - SVProgressHUD
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Kingfisher
+    - RNCryptor
     - SVProgressHUD
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 588739b1accc170b2a01d9f087ed6d60783d656d
+PODFILE CHECKSUM: 5b01ab1aee35c5920e60372b6078b8bedee87b29
 
 COCOAPODS: 1.5.0.beta.1

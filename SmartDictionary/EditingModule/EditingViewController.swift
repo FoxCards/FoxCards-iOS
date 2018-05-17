@@ -19,13 +19,27 @@ class EditingViewController: UIViewController {
     @IBOutlet weak var transcriptionTextField: UITextField!
     @IBOutlet weak var knownSwitch: UISwitch!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = "Новое слово"
+        if word != nil {
+            navigationItem.title = word!.word
+            WordTextField.text = word!.word
+            translateTextField.text = word!.translate
+            transcriptionTextField.text = word!.transcriptions
+            knownSwitch.isOn = word!.isKnow
+            WordTextField.isEnabled = false
+        } else {
+            knownSwitch.isOn = false
+        }
+    }
+    
     @IBAction func pushToTranslate(_ sender: Any) {
         if WordTextField.text != "" {
             DataProvider.getTranslate(text: WordTextField.text!, locale: const.app_settings.app_language?.api_locale ?? "", success: { [weak self] (translate) in
                 DispatchQueue.main.async {
                     self?.translateTextField.text = translate
                 }
-                
             }) { (error) in
                 print(error)
             }
@@ -33,22 +47,9 @@ class EditingViewController: UIViewController {
     }
     
     @IBAction func pushToSave(_ sender: Any) {
-        presenter.save(word: WordTextField.text!, transcription: transcriptionTextField.text!, translate: translateTextField.text!, isKnown: knownSwitch.isOn)
-        self.navigationController?.popViewController(animated: true)
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.title = "Новое слово"
-        
-        if word != nil {
-            navigationItem.title = word!.word
-            WordTextField.text = word!.word
-            translateTextField.text = word!.translate
-            transcriptionTextField.text = word!.transcriptions
-            knownSwitch.isOn = word!.isKnow
-        } else {
-            knownSwitch.isOn = false
+        if WordTextField.text != "" {
+            presenter.save(word: WordTextField.text!, transcription: transcriptionTextField.text!, translate: translateTextField.text!, isKnown: knownSwitch.isOn)
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
@@ -62,4 +63,17 @@ extension EditingViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+}
+
+extension EditingViewController {
+//    func setNavBatItem() {
+//        let imageView = UIImageView()
+//        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+//        imageView.contentMode = .scaleAspectFill
+//        imageView.clipsToBounds = true
+//        imageView.image = UIImage(named: "\(String(describing: const.app_settings.app_language?.speach_locale ?? "" )).png")
+//        let barButtonItem = UIBarButtonItem(customView: imageView)
+//        navigationItem.rightBarButtonItem = barButtonItem
+//
+//    }
 }

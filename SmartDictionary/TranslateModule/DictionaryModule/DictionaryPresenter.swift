@@ -20,7 +20,7 @@ class DictionaryPresenter: NSObject, DictionaryPresenterInput {
     func setUpFrc(isKnow: Bool) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Word")
         
-        let predicate = NSPredicate(format: "isKnow=%i AND language=%@", isKnow as CVarArg, const.app_settings.app_language?.name ?? "")
+        let predicate = NSPredicate(format: "isKnow=%i AND language=%@", isKnow as CVarArg, const.app_settings.app_language?.speach_locale ?? "")
         fetchRequest.predicate = predicate
         let sortDescriptor = NSSortDescriptor(key: "date", ascending:selectedSegmentIndex )
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -63,7 +63,7 @@ class DictionaryPresenter: NSObject, DictionaryPresenterInput {
     
     func shiftObj(index: IndexPath,known: Bool) {
         let obj = frc?.object(at: index) as! Word
-        WordsFabrique.setWord(word: obj.word!, transcription: obj.transcriptions!, translate: obj.translate!, isKnow: known, context: CoreDataManager.sharedInstance.getMainContext())
+        WordsFabrique.setWord(word: obj.word!, transcription: obj.transcriptions!, translate: obj.translate!, isKnow: known, language: nil, context: CoreDataManager.sharedInstance.getMainContext())
         CoreDataManager.sharedInstance.saveContext()
     }
     

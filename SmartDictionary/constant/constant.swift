@@ -10,10 +10,8 @@ import Foundation
 
 struct const {
     struct API_statements {
-        //static let base_url = "http://foxcards.local"
-        static let base_url = "https://kind-frog-76.localtunnel.me"
-        static let translate_url = "https://translate.yandex.net/api/v1.5/tr.json/translate"
-        static let API_key = ""
+        static let base_url = "http://188.225.11.241"
+        static let salt = ""
     }
     
     struct app_settings {

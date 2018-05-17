@@ -14,7 +14,6 @@ class WordModel {
     let transcription: String
     let translate: String
     let language: String
-
     
     init(word: String, transcription: String, translate: String, language: String) {
         self.word = word

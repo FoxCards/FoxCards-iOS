@@ -15,15 +15,12 @@ class API_wrapper {
     class func getTranslate(text: String, locale: String, success: @escaping (_ json: Any)->Void, failure: @escaping (_ errorDescription: String)-> Void)-> URLSessionTask {
         
         let encodeText = text.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
-        let url = const.API_statements.translate_url
+        let url = const.API_statements.base_url + "/api/translate"
         let params: [String: Any] = [
-            "key": const.API_statements.API_key,
             "text": encodeText ?? "",
-            "lang": locale,
-            "format": "plain",
+            "lang": locale
         ]
-
-        let request = API_conf.getGetRequst(url: url, params: params)
+        let request = API_conf.getPostRequest(url: url, body: params)
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, requestError) in
             API_conf.acceptDataFromServer(data: data, RequestError: requestError, success: success, failure: failure)
         }

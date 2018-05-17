@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 
 protocol PurchasesViewInput {
+    var id: Int? { get set }
     var dataSource: [CardCollectionModel] { get set }
     func reloadData()
 }
@@ -17,7 +18,7 @@ protocol PurchasesViewInput {
 class PurchasesViewController: UIViewController, PurchasesViewInput {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var id: Int?
     var presenter: PurchasesPresenter?
     var dataSource = [CardCollectionModel]()
     
@@ -25,14 +26,14 @@ class PurchasesViewController: UIViewController, PurchasesViewInput {
         super.viewDidLoad()
         self.presenter = PurchasesPresenter(view: self)
         registerNib()
-        //SVProgressHUD.show()
-        //presenter?.getAllCards()
+        SVProgressHUD.show()
+        presenter?.getAllCards()
         
     }
     
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         SVProgressHUD.dismiss()
     }
     
@@ -44,11 +45,11 @@ class PurchasesViewController: UIViewController, PurchasesViewInput {
 extension PurchasesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5 //dataSource.count
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "test" //dataSource[section].lang
+        return dataSource[section].lang
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,7 +58,7 @@ extension PurchasesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "purchasesCell", for: indexPath) as! PurchasesTableViewCell
-        //cell.configure(dataSource: dataSource[indexPath.section].cardSets, vc: self)
+        cell.configure(dataSource: dataSource[indexPath.section].cardSets, vc: self)
         cell.configure(vc: self)
         return cell
     }
@@ -65,12 +66,24 @@ extension PurchasesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         (cell as? PurchasesTableViewCell)?.reloadData()
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 220.0
+    }
 }
 
 extension PurchasesViewController {
     func registerNib() {
         let nib = UINib(nibName: "PurchasesTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "purchasesCell")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "cardsToCard", let dest = segue.destination as? CardSetViewController {
+            dest.id = self.id
+
+        }
     }
 }
 

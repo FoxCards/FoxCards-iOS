@@ -18,7 +18,7 @@ class TestManager {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Word")
         var predicate: NSPredicate?
         if isKnow != nil {
-             predicate = NSPredicate(format: "isKnow=%i AND language=%@", isKnow! as CVarArg, const.app_settings.app_language?.name ?? "" )
+             predicate = NSPredicate(format: "isKnow=%i AND language=%@", isKnow! as CVarArg, const.app_settings.app_language?.speach_locale ?? "" )
             fetchRequest.predicate = predicate
         }
         

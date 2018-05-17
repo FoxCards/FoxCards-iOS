@@ -15,7 +15,6 @@ class CardSetWordCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
 

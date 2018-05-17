@@ -11,20 +11,13 @@ import SwiftyJSON
 
 class CardsViewController: UIViewController, CardViewInput {
 
+    
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var segment: UISegmentedControl!
-    
     @IBOutlet weak var swipableView: SwipableViews!
+    
     var presenter = CardPresenter()
-    
-    @IBAction func changeValueOfsegment(_ sender: Any) {
-        let bool = segment.selectedSegmentIndex == 0 ? false : true
-        presenter.clearArray()
-        presenter.getWords(isKnow: bool)
-        swipableView.reloadDAta1()
-    }
-    
-  
+    var voiceUpCard = [CardView]()
     
     @IBAction func swipeLeft(_ sender: Any) {
         swipableView.autoSwipe(direction: .left)
@@ -36,10 +29,16 @@ class CardsViewController: UIViewController, CardViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         addCards()
         presenter.view = self
         presenter.viewDidLoad()
         configureSegmentView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        safeVoice()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +48,17 @@ class CardsViewController: UIViewController, CardViewInput {
         presenter.getWords(isKnow: false)
         swipableView.reloadDAta1()
         
+    }
+    
+    @IBAction func changeValueOfsegment(_ sender: Any) {
+        let bool = segment.selectedSegmentIndex == 0 ? false : true
+        presenter.clearArray()
+        presenter.getWords(isKnow: bool)
+        swipableView.reloadDAta1()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     func reloadData() {
@@ -63,7 +73,7 @@ extension CardsViewController: SwipableViewsDelegate, SwipableViewsDataSource {
     }
     
     func view(view: UIView, atIndex index: Int) {
-        (view as! CardView).configure(obj: presenter.entityAt(index: index) as! Word, frame: self.view.frame)
+        (view as! CardView).configure(obj: presenter.entityAt(index: index) as! Word, vc: self, frame: self.view.frame)
     }
     
     func willSwiped(direction: swipeDirection, index: Int) {
@@ -80,8 +90,6 @@ extension CardsViewController: SwipableViewsDelegate, SwipableViewsDataSource {
             presenter.updateWordToUnknown(obj: presenter.entityAt(index: index) as! Word)
         }
     }
-    
-    
 }
 
 extension CardsViewController {
@@ -97,5 +105,11 @@ extension CardsViewController {
         segmentView.clipsToBounds = true
         segmentView.layer.cornerRadius = 16
         segmentView.layer.borderWidth = 0
+    }
+    
+    func safeVoice() {
+        for card in voiceUpCard {
+            card.safeVoice()
+        }
     }
 }

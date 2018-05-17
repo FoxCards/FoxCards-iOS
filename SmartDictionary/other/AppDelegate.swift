@@ -14,20 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-//    let currentLang = CurrentLanguageFabrique.getCurrentLang(context: CoreDataManager.sharedInstance.getMainContext())
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let context = CoreDataManager.sharedInstance.getMainContext()
 
         let currentLang = CurrentLanguageFabrique.getCurrentLang(context: context)
-    
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         
         if currentLang == nil {
-            let english = const.languages.english
-            CurrentLanguageFabrique.updateCurrentLang(name: english.name, api_locale: english.api_locale, speach_locale: english.speach_locale, lang_image: english.imgLang, context: context)
-            CoreDataManager.sharedInstance.saveContext()
-            const.app_settings.app_language = CurrentLanguageFabrique.getCurrentLang(context: context)
+            let vc = UIStoryboard.create(.main).instantiateViewController(withIdentifier: "setUpWizard")
+            window?.rootViewController = vc
+        } else {
+            let vc = UIStoryboard.create(.main).instantiateViewController(withIdentifier: "mainTabBar")
+            window?.rootViewController = vc
         }
         
         return true

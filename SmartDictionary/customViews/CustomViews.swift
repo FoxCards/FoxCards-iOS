@@ -18,7 +18,7 @@ class SaveButtonStyle: UIButton {
         layer.cornerRadius = 15
         layer.borderWidth = 0
         layer.borderColor = UIColor.white.cgColor
-        backgroundColor = #colorLiteral(red: 0.2643043933, green: 1, blue: 0.2122905025, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         setTitleColor(UIColor.white, for: UIControlState.normal)
     }
     

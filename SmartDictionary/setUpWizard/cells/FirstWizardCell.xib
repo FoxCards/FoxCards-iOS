@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="firstWizardCell" id="8qM-mZ-746" customClass="FirstWizardCell" customModule="SmartDictionary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="447"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="447"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogt-0l-HXi">
+                        <rect key="frame" x="51" y="347" width="220" height="40"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="220" id="Vcu-kw-6NV"/>
+                            <constraint firstAttribute="height" constant="40" id="foJ-iC-yaC"/>
+                        </constraints>
+                        <state key="normal" title="Далее">
+                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="next:" destination="8qM-mZ-746" eventType="touchUpInside" id="jOR-O6-FPt"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="выфафвыа вфыа фыва вфыа ывфа вфыа фыва фвыаыфвафыв" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUC-Ef-jmD">
+                        <rect key="frame" x="10" y="287" width="302" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="EIp-qy-yMY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ogt-0l-HXi" secondAttribute="bottom" constant="60" id="EZ4-xB-kCk"/>
+                <constraint firstAttribute="trailing" secondItem="NUC-Ef-jmD" secondAttribute="trailing" constant="10" id="Im4-cF-Zcr"/>
+                <constraint firstItem="Ogt-0l-HXi" firstAttribute="centerX" secondItem="8qM-mZ-746" secondAttribute="centerX" id="jB2-85-dnB"/>
+                <constraint firstItem="Ogt-0l-HXi" firstAttribute="top" secondItem="NUC-Ef-jmD" secondAttribute="bottom" constant="10" id="u7F-3u-h7o"/>
+                <constraint firstItem="NUC-Ef-jmD" firstAttribute="leading" secondItem="8qM-mZ-746" secondAttribute="leading" constant="10" id="x46-YI-s12"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="3u4-XN-GeV"/>
+            <size key="customSize" width="322" height="447"/>
+            <point key="canvasLocation" x="34" y="124.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

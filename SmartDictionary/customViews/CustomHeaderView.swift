@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SVProgressHUD
 
 
 class CustomHeaderView: UIView {
@@ -15,6 +16,7 @@ class CustomHeaderView: UIView {
     @IBOutlet var view: UIView!
     @IBOutlet weak var imageVIew: UIImageView!
     @IBOutlet weak var wordsCountLabel: UILabel!
+    let saveWordsService = SaveWordService()
     var viewController: UIViewController?
     var model: CardSetModel?
     
@@ -22,6 +24,11 @@ class CustomHeaderView: UIView {
         self.viewController?.performSegue(withIdentifier: "toSuggestWord", sender: nil)
     }
     @IBAction func pushToAddToDictionary(_ sender: Any) {
+        guard let words = self.model?.words else { return }
+        saveWordsService.saveWords(words: words, success: {
+            SVProgressHUD.showSuccess(withStatus: "Сохранено в ваш словарь")
+        })
+        
     }
     @IBOutlet weak var suggestButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
