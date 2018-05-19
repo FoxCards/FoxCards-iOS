@@ -10,7 +10,6 @@ import UIKit
 
 class SetUpWizardVC: UIViewController {
 
-
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pagingControll: UIPageControl!
     var arrayVideo = ["video1", "", "video2"]
