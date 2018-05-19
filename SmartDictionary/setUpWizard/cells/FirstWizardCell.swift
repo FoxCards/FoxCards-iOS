@@ -10,6 +10,9 @@ import UIKit
 import MediaPlayer
 
 class FirstWizardCell: UICollectionViewCell {
+    
+    
+    @IBOutlet weak var textLabel: UILabel!
     var moviePlayer: MPMoviePlayerController?
     var vc: SetUpWizardVC?
     var index: Int?
@@ -29,8 +32,9 @@ class FirstWizardCell: UICollectionViewCell {
         
     func configure(media: String,text: String,index: Int, vc: SetUpWizardVC) {
         self.vc = vc
+        self.textLabel.text = text
         self.index = index
-        let path = Bundle.main.path(forResource: media, ofType: "MP4")
+        let path = Bundle.main.path(forResource: media, ofType: "m4v")
         let url = URL(fileURLWithPath: path!)
         self.moviePlayer = MPMoviePlayerController(contentURL: url)
         self.moviePlayer?.view.frame = CGRect(x: 10, y: 30, width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height - 250)

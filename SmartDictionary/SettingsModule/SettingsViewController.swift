@@ -24,8 +24,11 @@ class SettingsViewController: UIViewController {
         pickerView.isHidden = true
         pickerView.delegate = self
         pickerView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         selectButton.setTitle(const.app_settings.app_language?.name, for: .normal)
-
     }
 }
 

@@ -18,34 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-After all this time?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiu-jF-iXR">
-                                <rect key="frame" x="98" y="400.5" width="179" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Always" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PX0-dq-7G2">
-                                <rect key="frame" x="148.5" y="431" width="79" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fox_opacity.png" translatesAutoresizingMaskIntoConstraints="NO" id="ow3-Nv-wzb">
-                                <rect key="frame" x="87" y="173.5" width="200" height="200"/>
+                            <view alpha="0.38" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1F-RH-rj4">
+                                <rect key="frame" x="0.0" y="497" width="375" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-After all this time?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiu-jF-iXR">
+                                        <rect key="frame" x="98" y="27" width="179" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="0.96470588235294119" green="0.74509803921568629" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Always." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PX0-dq-7G2">
+                                        <rect key="frame" x="98" y="67" width="179" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" red="0.96470588235294119" green="0.74509803921568629" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="LSn-VN-xrE"/>
-                                    <constraint firstAttribute="width" constant="200" id="SKA-ks-qMg"/>
+                                    <constraint firstItem="PX0-dq-7G2" firstAttribute="centerX" secondItem="C1F-RH-rj4" secondAttribute="centerX" id="3Eg-BM-5SB"/>
+                                    <constraint firstItem="jiu-jF-iXR" firstAttribute="centerY" secondItem="C1F-RH-rj4" secondAttribute="centerY" constant="-20" id="67l-jE-xs6"/>
+                                    <constraint firstItem="PX0-dq-7G2" firstAttribute="centerY" secondItem="C1F-RH-rj4" secondAttribute="centerY" constant="20" id="6Ls-tg-9A5"/>
+                                    <constraint firstAttribute="height" constant="120" id="LqE-wf-I3W"/>
+                                    <constraint firstItem="PX0-dq-7G2" firstAttribute="width" secondItem="jiu-jF-iXR" secondAttribute="width" id="dOU-7N-f6T"/>
+                                    <constraint firstItem="jiu-jF-iXR" firstAttribute="centerX" secondItem="C1F-RH-rj4" secondAttribute="centerX" id="eDT-D6-CZU"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fox_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="y5D-bY-KyD">
+                                <rect key="frame" x="87.5" y="173.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="9Ze-zW-Qor"/>
+                                    <constraint firstAttribute="width" constant="200" id="XEB-eQ-JwL"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92505842447280884" green="0.39855974912643433" blue="0.20082104206085205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.61960784313725492" green="0.34901960784313724" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="jiu-jF-iXR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="80" id="R1p-BC-lc6"/>
-                            <constraint firstItem="PX0-dq-7G2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ROR-BO-dwh"/>
-                            <constraint firstItem="ow3-Nv-wzb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-60" id="XUM-C2-mKx"/>
-                            <constraint firstItem="jiu-jF-iXR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YTe-vw-Mee"/>
-                            <constraint firstItem="PX0-dq-7G2" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="110" id="ZBl-QP-tZh"/>
-                            <constraint firstItem="ow3-Nv-wzb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pse-2U-4ku"/>
+                            <constraint firstItem="y5D-bY-KyD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-60" id="8OV-M2-USL"/>
+                            <constraint firstItem="y5D-bY-KyD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Bil-gH-bve"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C1F-RH-rj4" secondAttribute="trailing" id="BrY-1v-piR"/>
+                            <constraint firstItem="C1F-RH-rj4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H9H-Be-2Bf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C1F-RH-rj4" secondAttribute="bottom" constant="50" id="kKx-r3-zaL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -56,6 +69,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fox_opacity.png" width="1024" height="1024"/>
+        <image name="fox_transparent" width="512" height="512"/>
     </resources>
 </document>

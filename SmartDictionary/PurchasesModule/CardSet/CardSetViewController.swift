@@ -68,6 +68,7 @@ extension CardSetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableVIew.dequeueReusableCell(withIdentifier: "carSetWordCell", for: indexPath) as! CardSetWordCell
+        cell.selectedBackgroundView = UIView()
         return cell
         
     }
@@ -75,7 +76,10 @@ extension CardSetViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cell = cell as? CardSetWordCell
         cell?.configure(word: thisSet?.words?[indexPath.row].word ?? "", translate: thisSet?.words?[indexPath.row].translate ?? "")
-        cell?.selectedBackgroundView = UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 61
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

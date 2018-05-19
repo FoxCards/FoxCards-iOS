@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class CardsViewController: UIViewController, CardViewInput {
 
+    @IBOutlet weak var cardMainConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var segment: UISegmentedControl!
@@ -29,11 +30,17 @@ class CardsViewController: UIViewController, CardViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addCards()
         presenter.view = self
         presenter.viewDidLoad()
         configureSegmentView()
+        
+        if UIScreen.main.bounds.width <= 440 {
+            swipableView.heightAnchor.constraint(equalTo: swipableView.widthAnchor, multiplier: 3.0/2.0).isActive = true
+        } else {
+            swipableView.heightAnchor.constraint(equalTo: swipableView.widthAnchor, multiplier: 2.4/2.0).isActive = true
+        }
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -19,14 +19,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="344" height="76.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14z-Bd-09q">
-                        <rect key="frame" x="151" y="28" width="42" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14z-Bd-09q">
+                        <rect key="frame" x="142" y="28" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lrh-P7-2hY">
-                        <rect key="frame" x="116" y="26" width="30" height="25"/>
+                        <rect key="frame" x="107" y="26" width="30" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="PoN-uU-2gx"/>
                             <constraint firstAttribute="height" constant="25" id="zoY-sp-Umq"/>
@@ -34,10 +34,9 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Lrh-P7-2hY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Nhf-8t-N57"/>
-                    <constraint firstItem="Lrh-P7-2hY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gnI-o2-2Ll"/>
-                    <constraint firstItem="14z-Bd-09q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ofS-Yf-nhC"/>
-                    <constraint firstItem="14z-Bd-09q" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="poR-8y-zzJ"/>
+                    <constraint firstItem="14z-Bd-09q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jSQ-Bb-wdA"/>
+                    <constraint firstItem="Lrh-P7-2hY" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-50" id="osW-fj-T5X"/>
+                    <constraint firstItem="Lrh-P7-2hY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wAk-XI-2P3"/>
                     <constraint firstItem="14z-Bd-09q" firstAttribute="leading" secondItem="Lrh-P7-2hY" secondAttribute="trailing" constant="5" id="yWG-Nv-yuF"/>
                 </constraints>
             </tableViewCellContentView>

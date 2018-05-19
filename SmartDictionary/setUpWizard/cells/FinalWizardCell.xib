@@ -38,7 +38,7 @@
                             <action selector="start:" destination="gTV-IL-0wX" eventType="touchUpInside" id="8hX-VN-MpC"/>
                         </connections>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fox_opacity.png" translatesAutoresizingMaskIntoConstraints="NO" id="CYX-3f-2WF">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fox_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="CYX-3f-2WF">
                         <rect key="frame" x="39" y="3.5" width="180" height="180"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="180" id="9Br-CT-9Ug"/>
@@ -59,6 +59,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="fox_opacity.png" width="1024" height="1024"/>
+        <image name="fox_transparent" width="512" height="512"/>
     </resources>
 </document>

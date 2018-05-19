@@ -18,8 +18,9 @@ class CardSetWordCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareForReuse()
-        widthConstraint1.constant = (UIScreen.main.bounds.width / 2) - 10
-        widthConstraint2.constant = (UIScreen.main.bounds.width / 2) - 10
+        widthConstraint1.constant = (UIScreen.main.bounds.width / 2) - 20
+        widthConstraint2.constant = (UIScreen.main.bounds.width / 2) - 20
+        layoutIfNeeded()
         
     }
 
