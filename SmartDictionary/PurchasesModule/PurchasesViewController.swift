@@ -8,11 +8,13 @@
 
 import UIKit
 import SVProgressHUD
+import AudioToolbox
 
 protocol PurchasesViewInput {
     var id: Int? { get set }
     var dataSource: [CardCollectionModel] { get set }
-    func reloadData()
+    func reloadData()-> Void
+    func endRefresh()-> Void
 }
 
 class PurchasesViewController: UIViewController, PurchasesViewInput {
@@ -20,6 +22,7 @@ class PurchasesViewController: UIViewController, PurchasesViewInput {
     @IBOutlet weak var tableView: UITableView!
     var id: Int?
     var presenter: PurchasesPresenter?
+    let refreshControl = UIRefreshControl()
     var dataSource = [CardCollectionModel]()
     
     override func viewDidLoad() {
@@ -28,9 +31,9 @@ class PurchasesViewController: UIViewController, PurchasesViewInput {
         registerNib()
         SVProgressHUD.show()
         presenter?.getAllCards()
+        setUpRefresh()
         
     }
-    
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -59,16 +62,22 @@ extension PurchasesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "purchasesCell", for: indexPath) as! PurchasesTableViewCell
         cell.configure(dataSource: dataSource[indexPath.section].cardSets, vc: self)
-        cell.configure(vc: self)
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        (cell as? PurchasesTableViewCell)?.reloadData()
+        let cell = cell as? PurchasesTableViewCell
+        cell?.configure(dataSource: dataSource[indexPath.section].cardSets, vc: self)
+        (cell)?.reloadData()
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 220.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
     }
 }
 
@@ -82,8 +91,25 @@ extension PurchasesViewController {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "cardsToCard", let dest = segue.destination as? CardSetViewController {
             dest.id = self.id
-
         }
+    }
+    
+    //refreshControll
+    func setUpRefresh() {
+        self.refreshControl.attributedTitle = NSAttributedString(string: "")
+        self.refreshControl.tintColor = UIColor.gray
+        self.refreshControl.addTarget(self, action: #selector(update), for: .valueChanged)
+        self.tableView.addSubview(refreshControl)
+        tableView.sendSubview(toBack: refreshControl)
+    }
+    
+    @objc func update() {
+        self.presenter?.getAllCards()
+        AudioServicesPlaySystemSound(1519)
+    }
+    
+    func endRefresh() {
+        self.refreshControl.endRefreshing()
     }
 }
 

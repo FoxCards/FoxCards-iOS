@@ -13,8 +13,14 @@ class CardSetWordCell: UITableViewCell {
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var translateLabel: UILabel!
     
+    @IBOutlet weak var widthConstraint2: NSLayoutConstraint!
+    @IBOutlet weak var widthConstraint1: NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()
+        prepareForReuse()
+        widthConstraint1.constant = (UIScreen.main.bounds.width / 2) - 10
+        widthConstraint2.constant = (UIScreen.main.bounds.width / 2) - 10
+        
     }
 
 

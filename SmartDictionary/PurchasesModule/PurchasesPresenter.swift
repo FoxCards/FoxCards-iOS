@@ -20,12 +20,14 @@ class PurchasesPresenter: PurchasesPresenterProtocol {
         self.view = view
     }
     
-    func getAllCards() {
+    func getAllCards()-> Void  {
         DataProvider.getAllCardSets { (array) in
             DispatchQueue.main.async {
                 self.view?.dataSource = array
                 self.view?.reloadData()
+                self.view?.endRefresh()
                 SVProgressHUD.dismiss()
+                
             }
         }
     }

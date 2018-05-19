@@ -19,23 +19,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRd-UP-eQK">
-                        <rect key="frame" x="15" y="13" width="35" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRd-UP-eQK">
+                        <rect key="frame" x="15" y="5.5" width="35" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="LQQ-vP-gAA"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLp-dY-1Gw">
-                        <rect key="frame" x="253" y="13" width="52" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLp-dY-1Gw">
+                        <rect key="frame" x="253" y="5.5" width="52" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37" id="XW4-7h-HXv"/>
+                            <constraint firstAttribute="width" constant="52" id="spV-Sd-PyB"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="sRd-UP-eQK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="1w6-Vb-nqP"/>
+                    <constraint firstItem="gLp-dY-1Gw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Ya1-jC-Rg6"/>
                     <constraint firstItem="sRd-UP-eQK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ZId-nt-NWx"/>
+                    <constraint firstAttribute="bottom" secondItem="sRd-UP-eQK" secondAttribute="bottom" constant="5" id="jaO-ZU-CU6"/>
                     <constraint firstItem="sRd-UP-eQK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ljM-fA-fY0"/>
                     <constraint firstAttribute="trailing" secondItem="gLp-dY-1Gw" secondAttribute="trailing" constant="15" id="mbf-TJ-LEr"/>
+                    <constraint firstAttribute="bottom" secondItem="gLp-dY-1Gw" secondAttribute="bottom" constant="5" id="tr2-bU-ZmF"/>
                     <constraint firstItem="gLp-dY-1Gw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zJp-RS-sYt"/>
                 </constraints>
             </tableViewCellContentView>
@@ -43,6 +54,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="translateLabel" destination="gLp-dY-1Gw" id="aZM-at-MKC"/>
+                <outlet property="widthConstraint1" destination="spV-Sd-PyB" id="Ovb-dg-p0h"/>
+                <outlet property="widthConstraint2" destination="LQQ-vP-gAA" id="1eS-an-dri"/>
                 <outlet property="wordLabel" destination="sRd-UP-eQK" id="kXr-eJ-4bf"/>
             </connections>
         </tableViewCell>

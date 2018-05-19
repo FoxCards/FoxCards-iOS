@@ -25,10 +25,6 @@ class PurchasesTableViewCell: UITableViewCell {
         self.dataSource = dataSource
         self.vc = vc
     }
-    
-    func configure(vc: PurchasesViewController) {
-        self.vc = vc
-    }
 }
 
 extension PurchasesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -45,7 +41,6 @@ extension PurchasesTableViewCell: UICollectionViewDelegate, UICollectionViewData
         cell.contentView.layer.borderWidth = 0.8
         cell.contentView.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         cell.contentView.layer.masksToBounds = true;
-        
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOffset = CGSize(width:0,height: 1.0)
         cell.layer.shadowRadius = 10
@@ -79,8 +74,6 @@ extension PurchasesTableViewCell {
     
     func reloadData() {
         self.collectionView.reloadData()
-//        self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .right, animated: false)
+        self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .right, animated: false)
     }
-    
-    
 }

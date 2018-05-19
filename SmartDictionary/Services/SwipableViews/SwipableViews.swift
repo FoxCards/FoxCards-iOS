@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 enum swipeDirection {
     case left
@@ -209,7 +210,7 @@ extension SwipableViews
                         view.center = CGPoint(x: self!.bounds.size.width / 2, y: self!.bounds.size.height / 2)
                         chooseLabel?.alpha = 0
                     }
-                    
+                    AudioServicesPlaySystemSound(1519)
                     view.transform = .identity
                 })
                 
