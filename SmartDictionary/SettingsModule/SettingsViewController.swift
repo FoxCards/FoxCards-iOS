@@ -13,12 +13,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var selectButton: UIButton!
     
-    @IBAction func selectPressed(_ sender: Any) {
-        if pickerView.isHidden {
-            pickerView.isHidden = false
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.isHidden = true
@@ -54,6 +48,14 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let myTitle = NSAttributedString(string: const.languages.langArray[row].name, attributes: [NSAttributedStringKey.font:UIFont(name: "Georgia", size: 15.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
         return myTitle
+    }
+}
+
+extension SettingsViewController {
+    @IBAction func selectPressed(_ sender: Any) {
+        if pickerView.isHidden {
+            pickerView.isHidden = false
+        }
     }
 }
 

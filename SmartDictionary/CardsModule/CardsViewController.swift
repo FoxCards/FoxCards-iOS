@@ -10,23 +10,14 @@ import UIKit
 import SwiftyJSON
 
 class CardsViewController: UIViewController, CardViewInput {
-
-    @IBOutlet weak var cardMainConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var cardMainConstraint: NSLayoutConstraint!
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var swipableView: SwipableViews!
     
     var presenter = CardPresenter()
     var voiceUpCard = [CardView]()
-    
-    @IBAction func swipeLeft(_ sender: Any) {
-        swipableView.autoSwipe(direction: .left)
-    }
- 
-    @IBAction func swipeRight(_ sender: Any) {
-        swipableView.autoSwipe(direction: .right)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +31,6 @@ class CardsViewController: UIViewController, CardViewInput {
         } else {
             swipableView.heightAnchor.constraint(equalTo: swipableView.widthAnchor, multiplier: 2.4/2.0).isActive = true
         }
-
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -55,13 +45,6 @@ class CardsViewController: UIViewController, CardViewInput {
         presenter.getWords(isKnow: false)
         swipableView.reloadDAta1()
         
-    }
-    
-    @IBAction func changeValueOfsegment(_ sender: Any) {
-        let bool = segment.selectedSegmentIndex == 0 ? false : true
-        presenter.clearArray()
-        presenter.getWords(isKnow: bool)
-        swipableView.reloadDAta1()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -118,5 +101,22 @@ extension CardsViewController {
         for card in voiceUpCard {
             card.safeVoice()
         }
+    }
+}
+
+extension CardsViewController {
+    @IBAction func changeValueOfsegment(_ sender: Any) {
+        let bool = segment.selectedSegmentIndex == 0 ? false : true
+        presenter.clearArray()
+        presenter.getWords(isKnow: bool)
+        swipableView.reloadDAta1()
+    }
+    
+    @IBAction func swipeLeft(_ sender: Any) {
+        swipableView.autoSwipe(direction: .left)
+    }
+    
+    @IBAction func swipeRight(_ sender: Any) {
+        swipableView.autoSwipe(direction: .right)
     }
 }

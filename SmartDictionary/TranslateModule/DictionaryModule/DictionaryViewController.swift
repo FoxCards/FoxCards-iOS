@@ -15,12 +15,6 @@ class DictionaryViewController: UIViewController, DictionaryViewInput {
     @IBOutlet weak var tableView: UITableView!
     let presenter = DictionaryPresenter()
 
-    @IBAction func changeValueOfSegment(_ sender: Any) {
-        let bool = segmetController.selectedSegmentIndex == 0 ? false : true
-        presenter.setUpFrc(isKnow: bool)
-        tableView.reloadData()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: "WordCell", bundle: nil)
@@ -55,8 +49,6 @@ class DictionaryViewController: UIViewController, DictionaryViewInput {
 extension DictionaryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Всего слов: \(presenter.numberOfEntities(segmentState: segmetController.selectedSegmentIndex)) "
-        
-        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -71,7 +63,6 @@ extension DictionaryViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath) as! WordCell
         let word = presenter.entityAt(index: indexPath, segmentState: segmetController.selectedSegmentIndex) as! Word
         cell.configure(model: word)
-        
         return cell
     }
     
@@ -95,18 +86,8 @@ extension DictionaryViewController: UITableViewDelegate, UITableViewDataSource {
                 self.presenter.shiftObj(index: indexPath, known: false)
             })
         }
-
         known.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         return [delete,known]
-    }
-}
-
-extension DictionaryViewController {
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addWordSegue", let dest = segue.destination as? EditingViewController {
-            dest.word = presenter.getSelectedWord(segmentState: segmetController.selectedSegmentIndex)
-        }
     }
 }
 
@@ -155,6 +136,12 @@ extension DictionaryViewController: DictionaryFrcViewChange {
 
 extension DictionaryViewController {
     
+    @IBAction func changeValueOfSegment(_ sender: Any) {
+        let bool = segmetController.selectedSegmentIndex == 0 ? false : true
+        presenter.setUpFrc(isKnow: bool)
+        tableView.reloadData()
+    }
+    
     @IBAction func addNewWord(_ sender: Any) {
         addWord()
     }
@@ -162,5 +149,13 @@ extension DictionaryViewController {
     @objc func addWord() {
         presenter.selectedWordIndex = nil
         performSegue(withIdentifier: "addWordSegue", sender: nil)
+    }
+}
+
+extension DictionaryViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addWordSegue", let dest = segue.destination as? EditingViewController {
+            dest.word = presenter.getSelectedWord(segmentState: segmetController.selectedSegmentIndex)
+        }
     }
 }

@@ -11,15 +11,6 @@ import CoreData
 
 class EditingPresenter:  EditingPresenterOutput, EditingPresenterInput {
     
-    func viewDidLoad() {
-        
-    }
-    
-    func viewWillAppear(animate: Bool) {
-        
-    }
-    
-    
     weak var view: EditingViewInput?
     
     func save(word: String, transcription: String, translate: String, isKnown: Bool) {
@@ -29,5 +20,13 @@ class EditingPresenter:  EditingPresenterOutput, EditingPresenterInput {
     
     func translate(text: String) -> String {
         return ""
+    }
+    
+    func viewDidLoad() {
+        
+    }
+    
+    func viewWillAppear(animate: Bool) {
+        
     }
 }

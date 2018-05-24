@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/andrejkonoplev/Desktop/by konoplev/lessons/swift/projects/SmartDictionary/Foxcards.xcodeproj">
+      location = "group:Foxcards.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

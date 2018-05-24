@@ -21,7 +21,6 @@ class CollectionCardSetsOperation: Operation {
         _ = API_wrapper.getAllCardSet(success: { (response) in
             //arrayWith cardCollection
             var arrayCollections = [CardCollectionModel]()
-            
             let json = JSON(response)
             let arrayObj = json[].arrayValue
             

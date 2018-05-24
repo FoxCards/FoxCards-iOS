@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,7 @@
 		9A7A06D72059742000F00911 /* london.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A06D62059742000F00911 /* london.jpg */; };
 		9A7A06E8205A602300F00911 /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A06E7205A602300F00911 /* PurchasesViewController.swift */; };
 		9A7A06EA205A605700F00911 /* PurchasesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A06E9205A605700F00911 /* PurchasesPresenter.swift */; };
+		9A80E4AF20B7314F00C67051 /* CheckDeviceLocaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E4AE20B7314F00C67051 /* CheckDeviceLocaleService.swift */; };
 		9A84C6D1209DD2BA008CB372 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6D0209DD2BA008CB372 /* Debouncer.swift */; };
 		9A84C6D520A7033A008CB372 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6D420A7033A008CB372 /* logo.png */; };
 		9A84C6D820A70EC4008CB372 /* SetUpWizardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6D720A70EC4008CB372 /* SetUpWizardVC.swift */; };
@@ -145,6 +146,7 @@
 		9A7A06D62059742000F00911 /* london.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = london.jpg; sourceTree = "<group>"; };
 		9A7A06E7205A602300F00911 /* PurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesViewController.swift; sourceTree = "<group>"; };
 		9A7A06E9205A605700F00911 /* PurchasesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesPresenter.swift; sourceTree = "<group>"; };
+		9A80E4AE20B7314F00C67051 /* CheckDeviceLocaleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDeviceLocaleService.swift; sourceTree = "<group>"; };
 		9A84C6D0209DD2BA008CB372 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		9A84C6D420A7033A008CB372 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9A84C6D720A70EC4008CB372 /* SetUpWizardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpWizardVC.swift; sourceTree = "<group>"; };
@@ -324,6 +326,14 @@
 			path = PurchasesModule;
 			sourceTree = "<group>";
 		};
+		9A80E4AD20B7311900C67051 /* CheckDeviceLocaleService */ = {
+			isa = PBXGroup;
+			children = (
+				9A80E4AE20B7314F00C67051 /* CheckDeviceLocaleService.swift */,
+			);
+			path = CheckDeviceLocaleService;
+			sourceTree = "<group>";
+		};
 		9A84C6CF209DD2A5008CB372 /* Debouncer */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +483,7 @@
 		9A859C0C203D74620057700E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9A80E4AD20B7311900C67051 /* CheckDeviceLocaleService */,
 				9A84C6E320A73ECD008CB372 /* SaveWordsService */,
 				9A84C6CF209DD2A5008CB372 /* Debouncer */,
 				9A91DDC1205AC9C4003F5AD1 /* PurchasesService */,
@@ -655,12 +666,11 @@
 				TargetAttributes = {
 					9A859BF0203D70550057700E = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = 9A859BEC203D70550057700E /* Build configuration list for PBXProject "Foxcards" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -798,6 +808,7 @@
 				9A3826012045618E00914AD3 /* TestManager.swift in Sources */,
 				9AA977A22080F2D600EF9580 /* +extensionSegue.swift in Sources */,
 				9AA977A02080F2B200EF9580 /* +extensionStoryboard.swift in Sources */,
+				9A80E4AF20B7314F00C67051 /* CheckDeviceLocaleService.swift in Sources */,
 				9A4257F82043FD9700668FB9 /* WordsFabrique.swift in Sources */,
 				9ACFD471203EC589007BC158 /* API_conf.swift in Sources */,
 				9A859C11203D75190057700E /* SwipableViews.swift in Sources */,
@@ -909,6 +920,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -960,7 +972,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -975,7 +988,10 @@
 				DEVELOPMENT_TEAM = 8X8NDN458D;
 				INFOPLIST_FILE = "$(SRCROOT)/SmartDictionary/other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.akonoplev.foxcards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "cfbb5d41-f36e-4039-bb8b-da761921c480";
@@ -995,7 +1011,10 @@
 				DEVELOPMENT_TEAM = 8X8NDN458D;
 				INFOPLIST_FILE = "$(SRCROOT)/SmartDictionary/other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.akonoplev.foxcards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "cfbb5d41-f36e-4039-bb8b-da761921c480";

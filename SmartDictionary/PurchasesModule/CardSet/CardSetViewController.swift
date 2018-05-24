@@ -15,20 +15,16 @@ protocol CardSetViewInput: class {
 }
 
 class CardSetViewController: UIViewController, CardSetViewInput {
-    var thisSet : CardSetModel?
-    var selectWord = [Int : WordModel]()
-    var id: Int?
-    
-    var saveWordService = SaveWordService()
-    
+
     @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var selectButton: UIBarButtonItem!
     @IBOutlet weak var tableVIew: UITableView!
     
-    func reloadData() {
-        self.tableVIew.reloadData()
-    }
+    var thisSet : CardSetModel?
+    var selectWord = [Int : WordModel]()
+    var id: Int?
+    var saveWordService = SaveWordService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +50,10 @@ class CardSetViewController: UIViewController, CardSetViewInput {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
     
+    func reloadData() {
+        self.tableVIew.reloadData()
+    }
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         SVProgressHUD.dismiss()
@@ -161,7 +161,6 @@ extension CardSetViewController {
     }
     
     //nav bar transition
-    
     override func loadView() {
         super.loadView()
         view.backgroundColor = .white

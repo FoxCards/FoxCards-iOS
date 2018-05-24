@@ -13,11 +13,6 @@ class SuggestWordVC: UIViewController {
     @IBOutlet weak var wordLabel: UITextField!
     @IBOutlet weak var translateLabel: UITextField!
     
-
-    @IBAction func pushToSuggest(_ sender: Any) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -61,5 +56,16 @@ extension SuggestWordVC {
             [weak self] context in
             self?.setColors()
             }, completion: nil)
+    }
+}
+
+//actions
+extension SuggestWordVC {
+    @IBAction func pushToSuggest(_ sender: Any) {
+        
+    }
+    
+    @IBAction func tapToScreen(_ sender: Any) {
+        self.view.endEditing(true)
     }
 }

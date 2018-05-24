@@ -21,7 +21,6 @@ protocol TranslatePresenterInput: class {
     func viewWillAppear(animate: Bool)
     func save(word: String, transcription: String, translate: String, isKnown: Bool)
     func translate(text: String)-> String
-    
 }
 
 protocol  TranslatePresenterOutput: class{

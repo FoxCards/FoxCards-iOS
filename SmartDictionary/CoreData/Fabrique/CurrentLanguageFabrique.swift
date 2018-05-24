@@ -17,10 +17,7 @@ class CurrentLanguageFabrique {
         fetchRequest.predicate = predicate
         
         let fetchResult = try? context.fetch(fetchRequest) as! [Current_lang]
-        
         return fetchResult!.count == 0 ? nil : fetchResult![0]
-        
-        
     }
     
     class func updateCurrentLang(name: String, api_locale: String, speach_locale: String, lang_image: String, context: NSManagedObjectContext ) {
@@ -28,7 +25,6 @@ class CurrentLanguageFabrique {
         let current_lang = self.getCurrentLang(context: context)
         if current_lang == nil {
             let lang = NSEntityDescription.insertNewObject(forEntityName: "Current_lang", into: context) as! Current_lang
-            
             lang.id = 1
             lang.api_locale = api_locale
             lang.name = name

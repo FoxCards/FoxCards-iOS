@@ -10,15 +10,14 @@ import UIKit
 
 class EditingViewController: UIViewController {
     
-    var word: Word?
-    let presenter = EditingPresenter()
-
-    
     @IBOutlet weak var WordTextField: UITextField!
     @IBOutlet weak var translateTextField: UITextField!
     @IBOutlet weak var transcriptionTextField: UITextField!
     @IBOutlet weak var knownSwitch: UISwitch!
     
+    var word: Word?
+    let presenter = EditingPresenter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Новое слово"
@@ -33,6 +32,21 @@ class EditingViewController: UIViewController {
             knownSwitch.isOn = false
         }
     }
+}
+
+extension EditingViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.becomeFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+//actions
+extension EditingViewController {
     
     @IBAction func pushToTranslate(_ sender: Any) {
         if WordTextField.text != "" {
@@ -52,16 +66,9 @@ class EditingViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
-}
-
-extension EditingViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.becomeFirstResponder()
-    }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    @IBAction func tapToScreen(_ sender: Any) {
+        self.view.endEditing(true)
     }
 }
 
