@@ -17,7 +17,6 @@ class OperationsManager {
         if cancelFlag {
             operationQueue.cancelAllOperations()
         }
-        
         operationQueue.addOperation(op)
     }
 }

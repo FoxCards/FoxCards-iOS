@@ -32,7 +32,6 @@ class PurchasesViewController: UIViewController, PurchasesViewInput {
         SVProgressHUD.show()
         presenter?.getAllCards()
         setUpRefresh()
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

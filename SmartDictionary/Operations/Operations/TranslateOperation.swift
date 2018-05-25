@@ -26,7 +26,6 @@ class TranslateOperation: Operation {
     }
     
     override func main() {
-        
         let semaphore = DispatchSemaphore(value: 0)
         let data: Data = self.text.data(using: .utf8)!
         let ciphertext = RNCryptor.encrypt(data: data, withPassword: const.API_statements.salt)
@@ -39,7 +38,6 @@ class TranslateOperation: Operation {
             let translate = json["translation"].stringValue
             self.success(translate)
             semaphore.signal()
-           
         }) { (error) in
             print(error)
             semaphore.signal()

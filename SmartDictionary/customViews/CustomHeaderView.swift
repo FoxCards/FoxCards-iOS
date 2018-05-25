@@ -16,6 +16,9 @@ class CustomHeaderView: UIView {
     @IBOutlet var view: UIView!
     @IBOutlet weak var imageVIew: UIImageView!
     @IBOutlet weak var wordsCountLabel: UILabel!
+    @IBOutlet weak var suggestButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    
     let saveWordsService = SaveWordService()
     var viewController: UIViewController?
     var model: CardSetModel?
@@ -28,12 +31,8 @@ class CustomHeaderView: UIView {
         saveWordsService.saveWords(words: words, success: {
             SVProgressHUD.showSuccess(withStatus: "Сохранено в ваш словарь")
         })
-        
     }
-    @IBOutlet weak var suggestButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
-    
-    
+
     init(frame: CGRect, model: CardSetModel, vc: UIViewController) {
         super.init(frame: frame)
         self.viewController = vc

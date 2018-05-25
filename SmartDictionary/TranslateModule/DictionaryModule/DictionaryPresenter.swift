@@ -19,7 +19,6 @@ class DictionaryPresenter: NSObject, DictionaryPresenterInput {
     
     func setUpFrc(isKnow: Bool) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Word")
-        
         let predicate = NSPredicate(format: "isKnow=%i AND language=%@", isKnow as CVarArg, const.app_settings.app_language?.speach_locale ?? "")
         fetchRequest.predicate = predicate
         let sortDescriptor = NSSortDescriptor(key: "date", ascending:selectedSegmentIndex )

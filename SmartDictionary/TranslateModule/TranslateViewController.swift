@@ -14,38 +14,10 @@ class TranslateViewController: UIViewController, TranslateViewInput {
     @IBOutlet weak var translateLabel: UILabel!
     @IBOutlet weak var fromLangLabel: UILabel!
     @IBOutlet weak var toLangLabel: UILabel!
+    @IBOutlet weak var saveWord: UIButton!
     
     let debauncer = Debouncer(interval: 0.8)
     var presenter = TranslatePresenter()
-    
-    @IBOutlet weak var saveWord: UIButton!
-   
-    @IBAction func redirectlang(_ sender: Any) {
-            clearAllText()
-            if self.fromLangLabel.text == "Русский" {
-               self.fromLangLabel.text = const.app_settings.app_language?.name ?? ""
-                self.toLangLabel.text = "Русский"
-            } else {
-                self.fromLangLabel.text = "Русский"
-                self.toLangLabel.text = const.app_settings.app_language?.name ?? ""
-            }
-    }
-    
-    @IBAction func pushToSaveWord(_ sender: Any) {
-        if translateTextField.text != "" {
-            if self.fromLangLabel.text == "Русский" && self.translateLabel.text != "" {
-                presenter.save(word: translateLabel.text!, transcription: "", translate: translateTextField.text!, isKnown: false)
-            } else if self.fromLangLabel.text == "Русский" && self.translateLabel.text == "" {
-                getAlert(string: "Слова сохраняются в словарь в формате **-ru, если слово ** языка не опознано, сохранение не возможно")
-            } else {
-               presenter.save(word: translateTextField.text!, transcription: "", translate: translateLabel.text!, isKnown: false)
-            }
-            
-            clearAllText()
-            saveWord.isEnabled = false
-            translateTextField.resignFirstResponder()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +33,8 @@ class TranslateViewController: UIViewController, TranslateViewInput {
         clearAllText()
         saveWord.isEnabled = false
     }
-    
+
     func reloadData() {
-        
     }
 }
 
@@ -120,5 +91,40 @@ extension TranslateViewController {
             NSLog("The \"OK\" alert occured.")
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+//actions
+extension TranslateViewController {
+    
+    @IBAction func redirectlang(_ sender: Any) {
+        clearAllText()
+        if self.fromLangLabel.text == "Русский" {
+            self.fromLangLabel.text = const.app_settings.app_language?.name ?? ""
+            self.toLangLabel.text = "Русский"
+        } else {
+            self.fromLangLabel.text = "Русский"
+            self.toLangLabel.text = const.app_settings.app_language?.name ?? ""
+        }
+    }
+    
+    @IBAction func pushToSaveWord(_ sender: Any) {
+        if translateTextField.text != "" {
+            if self.fromLangLabel.text == "Русский" && self.translateLabel.text != "" {
+                presenter.save(word: translateLabel.text!, transcription: "", translate: translateTextField.text!, isKnown: false)
+            } else if self.fromLangLabel.text == "Русский" && self.translateLabel.text == "" {
+                getAlert(string: "Слова сохраняются в словарь в формате **-ru, если слово ** языка не опознано, сохранение не возможно")
+            } else {
+                presenter.save(word: translateTextField.text!, transcription: "", translate: translateLabel.text!, isKnown: false)
+            }
+            
+            clearAllText()
+            saveWord.isEnabled = false
+            translateTextField.resignFirstResponder()
+        }
+    }
+    
+    @IBAction func tapToScreen(_ sender: Any) {
+        self.view.endEditing(true)
     }
 }

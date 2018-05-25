@@ -27,8 +27,4 @@ class TranslatePresenter: TranslatePresenterInput {
     func translate(text: String) -> String {
         return ""
     }
-    
-
-    
-    
 }
