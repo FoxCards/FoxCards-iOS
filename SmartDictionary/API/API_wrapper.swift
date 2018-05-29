@@ -62,11 +62,14 @@ extension API_wrapper {
     }
     
     //send device locale to server
-    class func firstIn(locale: String, success: @escaping (_ json: Any)->Void, failure: @escaping (_ error: String)-> Void)-> URLSessionDataTask {
+    class func firstIn(locale: String, device: String, iOS: String, deviceModel: String, success: @escaping (_ json: Any)->Void, failure: @escaping (_ error: String)-> Void)-> URLSessionDataTask {
         let encodeText = locale.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
-        let url = const.API_statements.base_url + "/firstIn"
+        let url = const.API_statements.base_url + "/api/firstIn"
         let params: [String: Any] = [
-            "locale": encodeText ?? ""
+            "locale": encodeText ?? "",
+            "device": device,
+            "iOS": iOS,
+            "deviceModel": deviceModel
         ]
         let request = API_conf.getPostRequest(url: url, body: params)
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, requestError) in

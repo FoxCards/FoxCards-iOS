@@ -11,6 +11,12 @@ import Speech
 import AVFoundation
 
 class CardView: SwipableViews {
+    
+    @IBOutlet weak var langImg: UIImageView!
+    @IBOutlet weak var voiceButton: UIButton!
+    @IBOutlet weak var voiceLabel: UILabel!
+    @IBOutlet weak var audioButton: UIButton!
+    
     weak var vc: CardsViewController?
     let CardFronTag = 1
     let CardBackTag = 2
@@ -22,15 +28,7 @@ class CardView: SwipableViews {
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: const.app_settings.app_language?.speach_locale ?? ""))
     let request = SFSpeechAudioBufferRecognitionRequest()
     var recognitionTask: SFSpeechRecognitionTask?
-    
     var voiceFlag = false
-    
-    @IBOutlet weak var langImg: UIImageView!
-    @IBOutlet weak var voiceButton: UIButton!
-    @IBOutlet weak var voiceLabel: UILabel!
-    @IBAction func flipCard(_ sender: Any) {
-        flipCard()
-    }
  
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,21 +36,6 @@ class CardView: SwipableViews {
         self.layer.cornerRadius = 30
         checkAllowedMicrophone()
     }
-    
-    
-    @IBAction func pushToStartRecognition(_ sender: UIButton) {
-        if sender.isSelected {
-            stopVoice()
-            voiceFlag = false
-            vc?.voiceUpCard.removeLast()
-        } else {
-            voiceFlag = true
-            startRecognition()
-            vc?.voiceUpCard.append(self)
-        }
-        sender.isSelected = !sender.isSelected
-    }
-
     
     func configure(obj: Word,vc: CardsViewController ,frame: CGRect) {
         self.vc = vc
@@ -91,11 +74,13 @@ class CardView: SwipableViews {
         if frontLabel.superview != nil {
             cardView = (frontLabel: frontLabel, backLabel: backLabel)
             voiceButton.isHidden = true
+            audioButton.isHidden = true
             langImg.isHidden = true
             voiceLabel.text = ""
         } else {
             cardView = (frontLabel: backLabel, backLabel: frontLabel)
             voiceButton.isHidden = false
+            audioButton.isHidden = false
             langImg.isHidden = false
             voiceLabel.text = ""
         }
@@ -172,5 +157,33 @@ extension CardView {
         if voiceFlag {
             stopVoice()
         }
+    }
+}
+
+//MARK: - actions
+extension CardView {
+    @IBAction func flipCard(_ sender: Any) {
+        flipCard()
+    }
+    
+    @IBAction func pushToStartRecognition(_ sender: UIButton) {
+        if sender.isSelected {
+            stopVoice()
+            voiceFlag = false
+            vc?.voiceUpCard.removeLast()
+        } else {
+            voiceFlag = true
+            startRecognition()
+            vc?.voiceUpCard.append(self)
+        }
+        sender.isSelected = !sender.isSelected
+    }
+    
+    @IBAction func playVoice(_ sender: Any) {
+        let utterance = AVSpeechUtterance(string:  frontLabel.text ?? "")
+        utterance.voice = AVSpeechSynthesisVoice(language: const.app_settings.app_language?.speach_locale)
+        
+        let synth = AVSpeechSynthesizer()
+        synth.speak(utterance)
     }
 }

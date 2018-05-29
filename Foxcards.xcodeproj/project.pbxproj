@@ -48,6 +48,7 @@
 		9A7A06E8205A602300F00911 /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A06E7205A602300F00911 /* PurchasesViewController.swift */; };
 		9A7A06EA205A605700F00911 /* PurchasesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A06E9205A605700F00911 /* PurchasesPresenter.swift */; };
 		9A80E4AF20B7314F00C67051 /* CheckDeviceLocaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E4AE20B7314F00C67051 /* CheckDeviceLocaleService.swift */; };
+		9A80E4B120BC8B6E00C67051 /* voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A80E4B020BC8B6E00C67051 /* voice.png */; };
 		9A84C6D1209DD2BA008CB372 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6D0209DD2BA008CB372 /* Debouncer.swift */; };
 		9A84C6D520A7033A008CB372 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A84C6D420A7033A008CB372 /* logo.png */; };
 		9A84C6D820A70EC4008CB372 /* SetUpWizardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C6D720A70EC4008CB372 /* SetUpWizardVC.swift */; };
@@ -147,6 +148,7 @@
 		9A7A06E7205A602300F00911 /* PurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesViewController.swift; sourceTree = "<group>"; };
 		9A7A06E9205A605700F00911 /* PurchasesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesPresenter.swift; sourceTree = "<group>"; };
 		9A80E4AE20B7314F00C67051 /* CheckDeviceLocaleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDeviceLocaleService.swift; sourceTree = "<group>"; };
+		9A80E4B020BC8B6E00C67051 /* voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice.png; sourceTree = "<group>"; };
 		9A84C6D0209DD2BA008CB372 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		9A84C6D420A7033A008CB372 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9A84C6D720A70EC4008CB372 /* SetUpWizardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpWizardVC.swift; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 		9AC178B3204A877B0001FB34 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9A80E4B020BC8B6E00C67051 /* voice.png */,
 				9A84C6E620A73F92008CB372 /* fox_opacity1.png */,
 				9A84C6D420A7033A008CB372 /* logo.png */,
 				9A5A216E2079026200BADFF8 /* backgrounds */,
@@ -698,6 +701,7 @@
 				9A5A21772079032400BADFF8 /* spain.jpg in Resources */,
 				9AC178BB204A8D1F0001FB34 /* stop.png in Resources */,
 				9A0D894620823F2E00F83106 /* CustomHeaderView.xib in Resources */,
+				9A80E4B120BC8B6E00C67051 /* voice.png in Resources */,
 				9AC178B5204A88220001FB34 /* flip.png in Resources */,
 				9A3DF5702073B6DA00C7DC2D /* es-ES.png in Resources */,
 				9A3DF56A2073B4C900C7DC2D /* it-IT.png in Resources */,

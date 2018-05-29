@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class CheckDeviceLocaleService {
     //get locale
@@ -18,10 +19,35 @@ class CheckDeviceLocaleService {
         }
     }
     
+    //iphone or ipad
+    class func getDevice() -> String {
+        return UIDevice.current.model
+    }
+    
+    // iOS version
+    class func getIOSVersion()-> String {
+        return UIDevice.current.systemVersion
+    }
+    
+    // device model
+    class func getDeviceMoodel()-> String {
+        var system = utsname()
+        uname(&system)
+        let machineMirror = Mirror(reflecting: system.machine)
+        let identifier = machineMirror.children.reduce("") { identifier, element in
+            guard let value = element.value as? Int8, value != 0 else { return identifier }
+            return identifier + String(UnicodeScalar(UInt8(value)))
+        }
+        return identifier
+    }
+    
     //send locale to server
-    class func sendLocale() {
+       class func sendLocale() {
         let locale = CheckDeviceLocaleService.getDeviceLocale()
-        _ = API_wrapper.firstIn(locale: locale, success: { (response) in
+        let device = CheckDeviceLocaleService.getDevice()
+        let iOSVersion = CheckDeviceLocaleService.getIOSVersion()
+        let deviceModel = CheckDeviceLocaleService.getDeviceMoodel()
+        _ = API_wrapper.firstIn(locale: locale, device: device, iOS: iOSVersion, deviceModel: deviceModel, success: { (response) in
             print(response)
         }, failure: { (error) in
             print(error)

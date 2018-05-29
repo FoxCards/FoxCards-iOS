@@ -37,7 +37,11 @@ class FirstWizardCell: UICollectionViewCell {
         let path = Bundle.main.path(forResource: media, ofType: "m4v")
         let url = URL(fileURLWithPath: path!)
         self.moviePlayer = MPMoviePlayerController(contentURL: url)
-        self.moviePlayer?.view.frame = CGRect(x: 10, y: 30, width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height - 250)
+        if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
+           self.moviePlayer?.view.frame = CGRect(x: 10, y: 30, width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height - 300)
+        } else {
+            self.moviePlayer?.view.frame = CGRect(x: 10, y: 30, width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height - 250)
+        }
         self.moviePlayer?.backgroundView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.moviePlayer?.controlStyle = .none
         self.moviePlayer?.repeatMode = .one
