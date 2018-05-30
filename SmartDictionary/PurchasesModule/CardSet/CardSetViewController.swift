@@ -41,13 +41,18 @@ class CardSetViewController: UIViewController, CardSetViewInput {
             }
         })
         
-        self.tableVIew.contentInset = UIEdgeInsetsMake(-64,0,0,0)
+        setUpTableView()
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     func reloadData() {
@@ -160,6 +165,17 @@ extension CardSetViewController {
         self.tableVIew.register(nib, forCellReuseIdentifier: "carSetWordCell")
     }
     
+    func setUpTableView() {
+        if #available(iOS 11.0, *) {
+            if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
+                self.tableVIew.contentInset = UIEdgeInsetsMake(self.view.safeAreaInsets.top - (self.navigationController?.navigationBar.frame.height)!,0,0,0)
+            } else{
+                self.tableVIew.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0)
+            }
+        } else {
+            self.tableVIew.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0)
+        }
+    }
     //nav bar transition
     override func loadView() {
         super.loadView()
